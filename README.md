@@ -1,1 +1,1 @@
-# ruby-playground
+# Ruby exercises
