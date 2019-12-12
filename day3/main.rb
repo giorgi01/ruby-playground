@@ -5,4 +5,4 @@ reader = CsvReader.new
 reader.read_data('students_data.csv')
 p reader.students
 puts reader.student_debt #ტერმინალში შეგვაქვს სტუდენტის სახელი
-p reader.print_gpa('student_names.csv')
+p reader.read_gpa('student_names.csv')
