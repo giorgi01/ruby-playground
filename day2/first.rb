@@ -1,10 +1,11 @@
 #1
 largest_num = 0
 
-(1..999).each do |i|
-	(2..999).each do |j|
-		if (i*j).to_s == (i*j).to_s.reverse
-			largest_num = i*j if i*j > largest_num
+(100..999).each do |i|
+	(i..999).each do |j|
+		product = i * j
+		if (product).to_s == (product).to_s.reverse
+			largest_num = product if product > largest_num
 		end
 	end
 end
@@ -30,3 +31,16 @@ end
 
 # p pythagorean_triplet(1000)
 puts pythagorean_triplet(1000).inject(:*)
+
+
+def generate_palindrome(first, last)
+	arr = []
+	(first..last).each do |i|
+		i_str = i.to_s
+		arr.push((i_str + i_str.reverse).to_i)
+		arr.push((i_str + i_str[1] + i_str[0]).to_i)
+	end
+		arr
+end
+
+p generate_palindrome(100, 999)
