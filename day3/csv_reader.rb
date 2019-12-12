@@ -25,7 +25,7 @@ class CsvReader
 		students["#{ARGV[0]} #{ARGV[1]}"][1]
 	end
 
-	def print_gpa(filename)
+	def read_gpa(filename)
 		student_gpa = {}
 		CSV.foreach(filename, headers: true) do |row|
 			student = "#{row['name']} #{row['last_name']}"
