@@ -19,12 +19,12 @@ class MyNumber
 
 	def three_digits_multiple?(number)
 		root = Math.sqrt(number).to_i
-    	return false if root > 999
-    	root.downto(100) do |item|
-        	return false if number / item > 999
-        	return true if number % item == 0
-    	end
-    	false
+    		return false if root > 999
+    		root.downto(100) do |item|
+        		return false if number / item > 999
+        		return true if number % item == 0
+    		end
+    		false
 	end
 
 	def six_d_multiple_palindrome?
