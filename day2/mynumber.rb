@@ -1,6 +1,6 @@
 class MyNumber
 
-	attr_accessor :num, :num_str, :palindrome_5, :palindrome_6
+	attr_accessor :num, :num_str
 
 	def initialize(num)
 		@num = num
