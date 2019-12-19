@@ -25,10 +25,6 @@ end
 
 class Cat < Mammal
 
-	def initialize(name, breed, color)
-		super(name, breed, color)
-	end
-
 	def say_something
 		'meow'
 	end
