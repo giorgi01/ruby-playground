@@ -18,26 +18,26 @@ end
 
 class Dog < Mammal
 
-	def bark
-		puts 'woof'
+	def say_something
+		'woof'
 	end
 end
 
 class Cat < Mammal
 
-	def meow
-		puts 'meow'
+	def initialize(name, breed, color)
+		super(name, breed, color)
+	end
+
+	def say_something
+		'meow'
 	end
 end
 
-
-=begin
 
 c = Cat.new('Garfield', 'Persian' ,'Orange')
 d = Dog.new('Dobby', 'Doberman', 'Black' )
 puts c
 puts d
-c.meow
-d.bark
-
-=end
+puts c.say_something
+puts d.say_something
