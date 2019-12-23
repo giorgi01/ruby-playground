@@ -1,5 +1,5 @@
-require_relative 'mammal.rb'
-require_relative 'inform.rb'
+require_relative 'mammal'
+require_relative 'inform'
 
 class Cat < Mammal
 	
@@ -27,3 +27,4 @@ d = Cat.new('Tom', 'Persian' ,'Orange', 12)
 puts c.say_something
 puts d.say_something
 puts c < d
+puts Cat.superclass, Cat.superclass.superclass
