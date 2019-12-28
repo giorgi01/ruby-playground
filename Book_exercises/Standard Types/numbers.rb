@@ -1,8 +1,19 @@
 puts (0b1010 == 012 and 012 == 10 and 10 == 0xA and 0xA == 1_0) #They all have the same value Decimal 10
 
 num = 0xA
+pw = 0
 4.times do
-	puts "#{num.class}: #{num}"
+	pw += 1
+	puts "#{num.class}: 0xA power #{pw} is #{num}"
+	num *= num
+end
+
+
+num = 0b1010
+pw = 0
+5.times do
+	pw += 1
+	puts "#{num.class}: 0b1010 power #{pw} is #{num}"
 	num *= num
 end
 
