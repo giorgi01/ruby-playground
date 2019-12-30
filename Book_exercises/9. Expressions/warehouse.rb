@@ -13,10 +13,6 @@ class Warehouse
 		@warehouse_condition[space_id] = product
 	end
 
-	def available_spaces
-		@available_spaces
-	end
-
 	def full?
 		@available_spaces <= 0 ? true : false 
 	end
