@@ -5,20 +5,12 @@ class Grade
 
 	attr_accessor :letter
 
-	@@letters = {
-		'A' => 5,
-		'B' => 4,
-		'C' => 3,
-		'D' => 2,
-		'F' => 1
-	}
-
 	def initialize(letter)
 		@letter = letter
 	end
 
 	def <=>(other)
-		@@letters[self.letter] <=> @@letters[other.letter]
+		other.letter <=> self.letter
 	end
 end
 
