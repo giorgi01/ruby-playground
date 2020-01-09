@@ -6,8 +6,14 @@ while true
 	if ttt.first_player_turn
 		puts "#{ttt.first_player} won the match!"
 		break
+	elsif ttt.draw? 
+		puts 'It\'s a draw'
+		break
 	elsif ttt.second_player_turn
 		puts "#{ttt.second_player} won the match!"
+		break
+	elsif ttt.draw? 
+		puts 'It\'s a draw'
 		break
 	end
 end

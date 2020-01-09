@@ -23,24 +23,28 @@ class TicTacToe
 
 	def win?
 		case
-		when [table[0],table[1],table[2]].uniq.size == 1 && (table[0].one? && table[1].one? && table[2].one?)
+		when [table[0],table[1],table[2]].uniq.size == 1 && !(table[0].empty? || table[1].empty? || table[2].empty?)
 			return true
-		when [table[3],table[4],table[5]].uniq.size == 1 && (table[3].one? && table[4].one? && table[5].one?)
+		when [table[3],table[4],table[5]].uniq.size == 1 && !(table[3].empty? || table[4].empty? || table[5].empty?)
 			return true
-		when [table[6],table[7],table[8]].uniq.size == 1 && (table[6].one? && table[7].one? && table[8].one?)
+		when [table[6],table[7],table[8]].uniq.size == 1 && !(table[6].empty? || table[7].empty? || table[8].empty?)
 			return true
-		when [table[0],table[3],table[6]].uniq.size == 1 && (table[0].one? && table[3].one? && table[6].one?)
+		when [table[0],table[3],table[6]].uniq.size == 1 && !(table[0].empty? || table[3].empty? || table[6].empty?)
 			return true
-		when [table[1],table[4],table[7]].uniq.size == 1 && (table[1].one? && table[4].one? && table[7].one?)
+		when [table[1],table[4],table[7]].uniq.size == 1 && !(table[1].empty? || table[4].empty? || table[7].empty?)
 			return true
-		when [table[2],table[5],table[8]].uniq.size == 1 && (table[2].one? && table[5].one? && table[8].one?)
+		when [table[2],table[5],table[8]].uniq.size == 1 && !(table[2].empty? || table[5].empty? || table[8].empty?)
 			return true
-		when [table[0],table[4],table[8]].uniq.size == 1 && (table[0].one? && table[4].one? && table[8].one?)
+		when [table[0],table[4],table[8]].uniq.size == 1 && !(table[0].empty? || table[4].empty? || table[8].empty?)
 			return true
-		when [table[2],table[4],table[6]].uniq.size == 1 && (table[2].one? && table[4].one? && table[6].one?)
+		when [table[2],table[4],table[6]].uniq.size == 1 && !(table[2].empty? || table[4].empty? || table[6].empty?)
 			return true	
 		end
 		false
+	end
+
+	def draw?
+		table.all? {|e| e[0].kind_of?(String)}
 	end
 
 	def show_table
