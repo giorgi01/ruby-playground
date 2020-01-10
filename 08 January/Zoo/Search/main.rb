@@ -87,3 +87,4 @@ else
 	puts "In this specie we have #{same_specie_counter} animals:"
 	puts same_specie_animals
 end
+
