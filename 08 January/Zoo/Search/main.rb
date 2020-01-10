@@ -7,18 +7,21 @@ reply = gets.chomp.split(',')
 data_reader = DataReader.new
 animals = data_reader.read_data('../data.csv')
 
-txt = ''
-counter = 0
-specie_counter = 0
+requested_animals = ''
+requested_counter = 0
+same_specie_counter = 0
+same_specie_animals = ''
 animals.each do |animal|
 	if animal.specie == reply[0] && animal.breed == reply[1] &&
 		animal.color == reply[2] && animal.gender == reply[3]
-		counter += 1
-		txt += animal.to_s
+		requested_counter += 1
+		requested_animals += animal.to_s
 	elsif animal.specie == reply[0]
-		specie_counter += 1
+		same_specie_counter += 1
+		same_specie_animals += animal.to_s
 	end
 end
-puts "In the zoo we have #{counter} your requested animal:"
-puts txt
-puts "In this specie we have #{specie_counter} other animals"
+puts "In the zoo we have #{requested_counter} your requested animal:"
+puts requested_animals
+puts "In this specie we have #{same_specie_counter} other animals"
+puts same_specie_animals

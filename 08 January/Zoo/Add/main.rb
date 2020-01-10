@@ -29,7 +29,6 @@ elsif reply == 'm'
 	while true
 		line = gets.chomp
 		break if line.empty? or line == 'exit'
-
-	csv_filewriter.append_to_database(filename, line.split(','))
+		csv_filewriter.append_to_database(filename, line.split(','))
 	end
 end
