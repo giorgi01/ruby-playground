@@ -1,6 +1,6 @@
 require 'csv'
 
-class CsvFileWriter
+class CsvWriter
 
 	def make_database(filename, *column_names)
 		CSV.open(filename, 'wb') {|csv| csv << column_names}
@@ -11,4 +11,4 @@ class CsvFileWriter
 	end
 end
 
-cc = CsvFileWriter.new
+cc = CsvWriter.new

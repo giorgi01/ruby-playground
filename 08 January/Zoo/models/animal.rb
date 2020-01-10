@@ -8,4 +8,8 @@ class Animal
 		@breed = breed
 		@gender = gender
 	end
+
+	def to_s
+		"#{specie} | #{breed} | #{color} | #{gender}"
+	end
 end

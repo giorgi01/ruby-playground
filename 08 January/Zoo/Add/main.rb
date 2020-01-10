@@ -1,6 +1,6 @@
-require_relative 'csv_file_writer'
+require_relative 'csv_writer'
 
-csv_filewriter = CsvFileWriter.new
+csv_filewriter = CsvWriter.new
 
 puts 'Do you want to make a new database or append to existed?'
 reply = gets.chomp
