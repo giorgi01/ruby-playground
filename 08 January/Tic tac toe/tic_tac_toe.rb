@@ -21,6 +21,15 @@ class TicTacToe
 		puts show_table
 	end
 
+	def move(coordinate, symbol)
+		while !table[coordinate].empty?
+			puts 'Place is already taken'
+			puts 'Where to place then?'
+			coordinate = Integer(gets.chomp) - 1
+		end
+			table[coordinate] = symbol
+	end
+
 	def win?
 		case
 		when [table[0],table[1],table[2]].uniq.size == 1 && !(table[0].empty? || table[1].empty? || table[2].empty?)
@@ -50,20 +59,19 @@ class TicTacToe
 	def show_table
 		"[#{table[0]}][#{table[1]}][#{table[2]}]\n[#{table[3]}][#{table[4]}][#{table[5]}]\n[#{table[6]}][#{table[7]}][#{table[8]}]".squeeze('[]')
 	end
-		
 
 	def first_player_turn
 		puts "It's #{@first_player}'s turn\nPlease type number where to set X:"
-		coordinate = gets.chomp
-		table[Integer(coordinate)-1] = 'X'
+		coordinate = Integer(gets.chomp) - 1
+		move(coordinate, 'X')
 		puts show_table
 		win?
 	end
 
 	def second_player_turn
 		puts "It's #{@second_player}'s turn\nPlease type number where to set O:"
-		coordinate = gets.chomp
-		table[Integer(coordinate)-1] = 'O'
+		coordinate = Integer(gets.chomp) - 1
+		move(coordinate, 'O')
 		puts show_table
 		win?
 	end
