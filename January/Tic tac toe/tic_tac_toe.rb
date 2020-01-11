@@ -21,13 +21,27 @@ class TicTacToe
 		puts show_table
 	end
 
-	def move(coordinate, symbol)
-		while !table[coordinate].empty?
+
+	def move(cell, symbol)
+=begin
+Example:
+მოთამაშეს სურს 1-ელ უჯრაში ჩაწეროს 'X'
+მეთოდში შემოდის ცვლადად 1
+cell -= 1 ვამცირებთ, რომ
+შემდგომში გამოვიყენოთ როგორც ინდექსი 
+=end
+		cell -= 1
+		while cell > 8 || cell < 0
+			puts 'Invalid coordinate'
+			cell = Integer(gets.chomp) - 1
+		end
+		while !table[cell].empty?
 			puts 'Place is already taken'
 			puts 'Where to place then?'
-			coordinate = Integer(gets.chomp) - 1
+			cell = Integer(gets.chomp) - 1
 		end
-			table[coordinate] = symbol
+			table[cell] = symbol
+
 	end
 
 	def win?
@@ -62,16 +76,16 @@ class TicTacToe
 
 	def first_player_turn
 		puts "It's #{@first_player}'s turn\nPlease type number where to set X:"
-		coordinate = Integer(gets.chomp) - 1
-		move(coordinate, 'X')
+		cell = Integer(gets.chomp)
+		move(cell, 'X')
 		puts show_table
 		win?
 	end
 
 	def second_player_turn
 		puts "It's #{@second_player}'s turn\nPlease type number where to set O:"
-		coordinate = Integer(gets.chomp) - 1
-		move(coordinate, 'O')
+		cell = Integer(gets.chomp)
+		move(cell, 'O')
 		puts show_table
 		win?
 	end
