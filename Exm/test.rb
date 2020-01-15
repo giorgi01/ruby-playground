@@ -1,12 +1,10 @@
-=begin
 #1
 h = { true => 'wow'}
 a = ['wow']
 b = a.dup
 puts h[a === b]
-=end
 
-=begin
+
 #2
 n = Integer(gets.chomp)
 m = Integer(gets.chomp)
@@ -63,11 +61,8 @@ class Integer
 end
 
 puts a + b * c
-=end
-
 
 #6
-=begin
 def calc(num)
 	calc = lambda do |n| 
  		return n * (num+1) if n.odd?
@@ -79,8 +74,7 @@ a = calc(10)
 puts a.call 1
 puts a.call 2
 puts a.call 3
-=end
-=begin
+
 #7
 n = Integer(gets.chomp)
 m = Integer(gets.chomp)
@@ -88,9 +82,8 @@ def power_of(n)
 	n ** yield 
 end
 puts power_of(n) { m }
-=end
 
-=begin
+
 #8
 class Person 
 
@@ -160,12 +153,9 @@ class Student < Person
 		@school_city = new_school_city
 	end
 end
-=end
 
 #9
-=begin
 n = Integer(gets.chomp)
 arr1 = Array.new(n).map {|e| e = Integer(gets.chomp)}
 p arr1
 p arr1.inject { |product, e| e.even? ? product*e : product }
-=end
